@@ -1,0 +1,92 @@
+$background-color: #fff;
+
+// Arrow
+$arrwo-width: 3em;
+$arrow-height: 1em;
+$arrow-margin: -1em;
+
+.popover {
+  background-color: $background-color;
+  padding: 1em;
+  box-sizing: border-box;
+
+  .popover-content {
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 100%;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      width: 0 !important;
+    }
+  }
+
+  .popover-arrow {
+    position: absolute;
+    width: $arrwo-width;
+    height: $arrow-height;
+
+    &[data-placement*="bottom"] {
+      top: 0;
+      left: 50%;
+      margin-top: $arrow-margin;
+      width: $arrwo-width;
+      height: $arrow-height;
+
+      &::before {
+        border-width: 0 1.5em 1em 1.5em;
+        border-color: transparent transparent $background-color transparent;
+      }
+    }
+
+    &[data-placement*="top"] {
+      bottom: 0;
+      left: 50%;
+      margin-bottom: $arrow-margin;
+      width: $arrwo-width;
+      height: $arrow-height;
+      border-radius: 5px;
+
+      &::before {
+        border-width: 1em 1.5em 0 1.5em;
+        border-color: $background-color transparent transparent transparent;
+      }
+    }
+
+    &[data-placement*="right"] {
+      left: 0;
+      top: 50%;
+      margin-left: $arrow-margin;
+      height: $arrwo-width;
+      width: $arrow-height;
+
+      &::before {
+        border-width: 1.5em 1em 1.5em 0;
+        border-color: transparent $background-color transparent transparent;
+      }
+    }
+
+    &[data-placement*="left"] {
+      top: 50%;
+      right: 0;
+      margin-right: $arrow-margin;
+      height: $arrwo-width;
+      width: $arrow-height;
+
+      &::before {
+        border-width: 1.5em 0 1.5em 1em;
+        border-color: transparent transparent transparent $background-color;
+      }
+    }
+
+    &::before {
+      content: "";
+      margin: auto;
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+  }
+}
