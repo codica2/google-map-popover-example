@@ -132,13 +132,14 @@ const Popover = ({
 Popover.propTypes = {
   trigger: PropTypes.element.isRequired,
   children: PropTypes.element.isRequired,
-  preferredPosition: PropTypes.oneOf(placements).isRequired,
+  preferredPosition: PropTypes.oneOf(placements),
   className: PropTypes.string,
   width: PropTypes.number,
   height: PropTypes.number
 };
 
 Popover.defaultProps = {
+  preferredPosition: "right",
   className: "",
   width: 250,
   height: 300

@@ -47,7 +47,6 @@ const App = ({ defaultZoom, defaultCenter }) => {
         onDragStart={() => toggleDragging(true)}
         onDragEnd={() => toggleDragging(false)}
         // onZoomChanged={() => console.log("onZoomChanged")}
-        // onClick={({ latLng }) => console.log(latLng.lat(), latLng.lng())}
       >
         <MarkerClusterer
           averageCenter
