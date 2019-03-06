@@ -18,27 +18,20 @@ const mapOptions = {
   disableDefaultUI: true
 };
 
-const MapContext = React.createContext({});
-
-const MapProvider = MapContext.Provider;
-export const MapConsumer = MapContext.Consumer;
+export const MapContext = React.createContext({});
 
 const App = ({ defaultZoom, defaultCenter }) => {
-  const [initialized, setInitialized] = useState(false);
   const [isDragging, toggleDragging] = useState(false);
+  const [zoom, setZoom] = useState(defaultZoom);
   const map = useRef();
 
   useEffect(() => {
-    if (!initialized) {
-      map.current =
-        map.current.context.__SECRET_MAP_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-
-      setInitialized(true);
-    }
-  });
+    map.current =
+      map.current.context.__SECRET_MAP_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+  }, []);
 
   return (
-    <MapProvider value={{ isDragging }}>
+    <MapContext.Provider value={{ isDragging, zoom }}>
       <GoogleMap
         ref={map}
         defaultZoom={defaultZoom}
@@ -46,7 +39,7 @@ const App = ({ defaultZoom, defaultCenter }) => {
         options={mapOptions}
         onDragStart={() => toggleDragging(true)}
         onDragEnd={() => toggleDragging(false)}
-        // onZoomChanged={() => console.log("onZoomChanged")}
+        onZoomChanged={() => setZoom(map.current.zoom)}
       >
         <MarkerClusterer
           averageCenter
@@ -179,7 +172,7 @@ const App = ({ defaultZoom, defaultCenter }) => {
           </Popover>
         </MarkerClusterer>
       </GoogleMap>
-    </MapProvider>
+    </MapContext.Provider>
   );
 };
 
