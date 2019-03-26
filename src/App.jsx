@@ -117,7 +117,7 @@ const App = ({ defaultZoom, defaultCenter }) => {
               <h3>Park of Maxim Gorky</h3>
 
               <img
-                src="http://localhost:3000/img/kharkiv-gorky-park-in.jpg"
+                src="/img/kharkiv-gorky-park-in.jpg"
                 alt="kharkiv-gorky-park-in"
               />
 
@@ -152,7 +152,7 @@ const App = ({ defaultZoom, defaultCenter }) => {
             <div>
               <h3>Codica</h3>
 
-              <img src="http://localhost:3000/img/codica.jpg" alt="codica" />
+              <img src="/img/codica.jpg" alt="codica" />
 
               <p>
                 Suspendisse nisl elit, rhoncus eget, elementum ac, condimentum

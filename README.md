@@ -10,7 +10,7 @@
 This is an example of `Custom Popover` usage with [React Google Maps](https://github.com/tomchentw/react-google-maps). It may include any content: videos, gifs, images, text etc. Also, it could be customized with CSS classes.
 
 <p align="center"> 
- <img width="100%" src="/public/img/popovers_example.gif" >
+ <img width="100%" src="/public/img/popovers-example.gif" >
 </p>
 
 ## Examples
